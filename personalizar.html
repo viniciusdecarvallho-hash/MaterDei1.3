@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#174b9b">
+<meta name="description" content="Monte seu terço personalizado na Mater Dei.">
+<title>Mater Dei | Personalize seu terço</title>
+<style>
+.custom-page,.custom-box,.custom-box form{overflow-x:hidden}.custom-box{box-sizing:border-box}.field input,.field textarea,.field select{max-width:100%;box-sizing:border-box}.field textarea{resize:vertical}
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap");
+
+:root{
+  --azul:#174b9b;
+  --azul2:#0e3470;
+  --azul-claro:#718fc3;
+  --azul-fundo:#edf3fb;
+  --creme:#f7f3e9;
+  --papel:#fffdf8;
+  --texto:#171717;
+  --suave:#62676f;
+  --linha:#d9dee7;
+  --dourado:#b99a55;
+  --verde:#198754;
+  --sombra:0 18px 50px rgba(18,55,105,.12);
+  --raio:4px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;
+  margin:0;background:var(--creme);color:var(--texto);
+  font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  line-height:1.6;
+}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.container{width:min(1080px,90%);margin:auto}
+button,input,textarea,select,.topbar,nav,.eyebrow,.desc,.price,.badge,.filter,.footer-links,.checkout-note,.notice,.summary-title{font-family:"Montserrat",Arial,sans-serif}.summary-line{padding:10px 0;border-bottom:1px solid var(--linha);font-family:"Montserrat",Arial,sans-serif;font-size:13px}.summary-line strong{display:block;font-size:14px;margin-top:3px}.summary-label{font-family:"Montserrat",Arial,sans-serif}
+
+.topbar{
+  background:var(--azul);color:#fff;text-align:center;font-size:11px;
+  padding:8px 12px;letter-spacing:.12em
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,253,248,.97);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--linha)
+}
+.nav{min-height:68px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px}
+.brand{display:flex;align-items:center;gap:6px;justify-self:center;grid-column:2;white-space:nowrap}
+.logo-img{width:27px;height:27px;object-fit:contain}
+.brand strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.08em;font-weight:600}
+.brand small{display:none}
+nav{display:flex;gap:20px;font-size:13px}
+nav a:hover{color:var(--azul)}
+.nav-actions{display:flex;align-items:center;gap:4px;justify-self:end;grid-column:3}
+.icon-btn,.cart-btn{border:1px solid var(--linha);background:#fff;padding:7px 9px;border-radius:999px}
+.cart-btn{background:var(--azul);color:#fff;border-color:var(--azul);font-size:13px;font-weight:700;width:auto;min-width:118px;height:40px;padding:8px 14px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.cart-count{display:inline-grid;place-items:center;min-width:18px;height:18px;background:#fff;color:var(--azul);border-radius:50%;font-size:10px;margin-left:3px}
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;border:0;background:transparent;padding:5px 8px;border-radius:2px;grid-column:1;grid-row:1;justify-self:start}.menu-btn:hover{background:var(--azul-fundo);color:var(--azul)}
+
+.side-menu{position:fixed;inset:0 auto 0 0;width:min(360px,88vw);background:var(--papel);z-index:90;box-shadow:18px 0 50px rgba(0,0,0,.18);transform:translateX(-105%);transition:transform .28s ease;padding:22px;overflow:auto}.side-menu.open{transform:translateX(0)}.side-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:80;opacity:0;pointer-events:none;transition:.28s}.side-menu-backdrop.open{opacity:1;pointer-events:auto}.side-menu-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--linha);padding-bottom:16px;margin-bottom:14px}.side-menu-brand{display:flex;align-items:center;gap:8px}.side-menu-brand img{width:34px;height:34px;object-fit:contain}.side-menu-brand strong{font-size:25px;letter-spacing:.06em}.side-menu a{display:block;padding:13px 4px;border-bottom:1px solid var(--linha);font-family:"Montserrat",Arial,sans-serif;font-size:13px}.side-menu a:hover{color:var(--azul)}.menu-close{border:0;background:transparent;font-size:28px;color:var(--texto)}
+.hero{
+  min-height:670px;display:grid;place-items:center;text-align:center;
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    linear-gradient(rgba(15,61,130,.76),rgba(18,68,145,.86)),
+    url("imagens/identidade-azul.png") center/cover;
+  border-bottom:1px solid var(--linha)
+}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at center,transparent 25%,rgba(0,0,0,.18) 100%)
+}
+.hero-content{position:relative;z-index:2;padding:80px 0}
+.hero-logo{width:min(210px,48vw);margin:0 auto 20px;filter:brightness(0) invert(1)}
+.eyebrow{color:var(--azul);text-transform:uppercase;letter-spacing:.24em;font-size:10px;font-weight:600}
+.hero .eyebrow{color:#fff}
+.hero h1{font-size:clamp(45px,7vw,80px);line-height:.98;margin:14px 0}
+.hero p{max-width:690px;margin:0 auto 30px;color:#f5f7fb;font-size:19px}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--azul);
+  background:var(--azul);color:#fff;padding:12px 21px;border-radius:2px;transition:.2s
+}
+.btn:hover{background:var(--azul2);transform:translateY(-1px)}
+.btn.light{background:#fff;color:var(--azul);border-color:#fff}
+.btn.outline{background:transparent;color:var(--azul)}
+.btn.whatsapp{background:var(--verde);border-color:var(--verde)}
+
+section{padding:86px 0}
+.section-head{text-align:center;margin-bottom:38px}
+.section-head h2{font-size:clamp(31px,4vw,48px);margin:8px 0}
+.section-head p{max-width:700px;margin:auto;color:var(--suave)}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 30px}
+.filter{
+  border:1px solid var(--linha);background:var(--papel);padding:9px 15px;
+  border-radius:2px;color:var(--suave)
+}
+.filter.active,.filter:hover{background:var(--azul);color:#fff;border-color:var(--azul)}
+.grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 3px 16px;scrollbar-width:thin}.grid .card{flex:0 0 min(330px,78vw);scroll-snap-align:start}
+.card{background:var(--papel);border:1px solid var(--linha);border-radius:3px;overflow:hidden;box-shadow:var(--sombra)}
+.product-photo{aspect-ratio:1/1;background:#e8edf5;position:relative;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.card:hover .product-photo img{transform:scale(1.025)}
+.photo-placeholder{height:100%;display:grid;place-items:center;text-align:center;color:#64708a;padding:25px;background:linear-gradient(135deg,#eef3fa,#d9e2f2)}
+.badge{position:absolute;top:13px;left:13px;background:var(--azul);color:#fff;padding:5px 10px;font-size:10px;letter-spacing:.04em}
+.card-body{padding:20px}
+.card h3{font-size:22px;margin:0 0 5px}
+.desc{color:var(--suave);font-size:13px;min-height:48px}
+.price{font-size:21px;color:var(--azul);font-weight:600;margin:13px 0}
+.card-actions{display:flex;gap:8px}
+.card-actions button{flex:1}
+.small{padding:10px 12px;font-size:12px}
+
+.visual-break{
+  background:var(--azul-fundo);border-top:1px solid #dbe4f2;border-bottom:1px solid #dbe4f2
+}
+.visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.visual-card{background:#fff;padding:10px;box-shadow:var(--sombra)}
+.visual-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.visual-copy h2{font-size:clamp(32px,4vw,50px);line-height:1.05;margin:8px 0 15px}
+.visual-copy p{color:var(--suave)}
+
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:var(--papel);border:1px solid var(--linha);padding:28px;border-radius:3px;text-align:center}
+.feature-icon{font-size:27px;color:var(--azul)}
+.feature h3{margin:8px 0}
+.feature p{margin:0;color:var(--suave);font-size:14px}
+
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.about-logo{background:#fff;padding:28px;border:1px solid var(--linha);box-shadow:var(--sombra)}
+.about-logo img{width:100%;max-width:430px;margin:auto}
+.ornament{background:var(--papel);border:1px solid var(--azul-claro);padding:40px;text-align:center;box-shadow:var(--sombra)}
+.ornament .cross{font-size:48px;color:var(--azul)}
+.ornament h3{font-size:32px;margin:7px 0}
+
+.custom{background:var(--azul);color:#fff}
+.custom-box{max-width:850px;margin:auto;text-align:center}
+.custom .eyebrow{color:#dbe7ff}
+.custom-box h2{font-size:clamp(33px,5vw,55px);margin:8px 0}
+.custom-box p{color:#e7edf9;max-width:700px;margin:0 auto 25px}
+
+.faq{max-width:800px;margin:auto}
+details{background:var(--papel);border:1px solid var(--linha);border-radius:3px;margin:10px 0;padding:17px 20px}
+summary{cursor:pointer;font-weight:bold}
+details p{color:var(--suave);margin:12px 0 0}
+
+.contact{background:#101d32;color:#fff}
+.contact .eyebrow{color:#b8cbed}
+.contact p{color:#d8e0ee}
+
+footer{padding:32px 0;text-align:center;color:var(--suave);font-size:12px;background:#f2eee5}
+.footer-logo{width:75px;margin:0 auto 10px}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:8px 0 15px}
+.footer-links a:hover{color:var(--azul)}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:100;display:none}
+.overlay.open{display:block}
+.drawer{
+  position:absolute;right:0;top:0;height:100%;width:min(470px,94%);background:var(--papel);
+  padding:25px;display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(0,0,0,.18)
+}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--linha);padding-bottom:15px}
+.close{border:0;background:transparent;font-size:30px}
+.cart-list{flex:1;overflow:auto;padding:10px 0}
+.cart-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--linha)}
+.qty{display:flex;align-items:center;justify-content:center;gap:7px;height:32px}
+.qty button{width:28px;height:28px;min-width:28px;border:1px solid var(--linha);background:#fff;border-radius:50%;display:grid;place-items:center;padding:0;margin:0;font-family:Arial,sans-serif;font-size:17px;line-height:1;font-weight:600}
+.qty strong{display:flex;align-items:center;justify-content:center;min-width:18px;height:28px;font-family:Arial,sans-serif;font-size:14px;line-height:1}
+.empty{text-align:center;color:var(--suave);padding:50px 10px}
+.cart-total{border-top:1px solid var(--linha);padding-top:17px}
+.cart-total-line{display:flex;justify-content:space-between;font-size:20px}
+.checkout-note{font-size:12px;color:var(--suave);margin:10px 0}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:120;display:none;place-items:center;padding:18px}
+.modal.open{display:grid}
+.modal-box{width:min(700px,100%);max-height:90vh;overflow:auto;background:var(--papel);padding:28px;position:relative;border:1px solid var(--linha)}
+.modal-close{position:absolute;right:17px;top:12px;border:0;background:transparent;font-size:28px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}.choice{position:relative;border:1px solid var(--linha);background:#fff;border-radius:12px;padding:8px;cursor:pointer;transition:.18s}.choice:hover{border-color:var(--azul)}.choice.selected{border:2px solid var(--azul);box-shadow:0 0 0 2px rgba(23,75,155,.08)}.choice input{position:absolute;opacity:0;pointer-events:none}.choice img{width:100%;height:105px;object-fit:cover;border-radius:8px;background:#f5f2eb}.choice-name{display:block;text-align:center;font-size:12px;font-weight:700;margin-top:7px}.choice-note{display:block;text-align:center;font-size:11px;color:var(--suave);margin-top:3px}.section-label{margin:24px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--linha);font-weight:700;color:var(--azul)}.required-note{font-size:12px;color:var(--suave);margin:0 0 8px}@media(max-width:700px){.choice-grid{grid-template-columns:repeat(2,1fr)}}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field input,.field textarea,.field select{
+  border:1px solid var(--linha);padding:11px;background:#fffdf9;outline:none;border-radius:2px
+;font-family:"Montserrat",Arial,sans-serif;font-size:14px;line-height:1.4}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--azul)}
+.notice{background:#edf3fb;border-left:3px solid var(--azul);padding:12px;font-size:12px;color:#53627a}
+.summary{
+  margin-top:20px;background:#eef7f0;border:1px solid #cfe1d2;padding:18px;
+  font-family:"Montserrat",Arial,sans-serif;font-size:13px
+}
+.summary h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px;margin:0 0 10px}
+.summary-line{padding:5px 0;border-bottom:1px solid #d7e4d9}
+.summary-line:last-child{border-bottom:0}
+.summary-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:600;margin-bottom:8px;color:var(--azul)}.summary-line{padding:10px 0;border-bottom:1px solid var(--linha);font-family:"Montserrat",Arial,sans-serif;font-size:13px}.summary-line strong{display:block;font-size:14px;margin-top:3px}.summary-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#66748a}
+
+@media(max-width:900px){
+  nav{display:none}
+  .grid{display:flex}
+  .about,.visual-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .grid{display:flex}
+  .side-menu{position:fixed;inset:0 auto 0 0;width:min(360px,88vw);background:var(--papel);z-index:90;box-shadow:18px 0 50px rgba(0,0,0,.18);transform:translateX(-105%);transition:transform .28s ease;padding:22px;overflow:auto}.side-menu.open{transform:translateX(0)}.side-menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:80;opacity:0;pointer-events:none;transition:.28s}.side-menu-backdrop.open{opacity:1;pointer-events:auto}.side-menu-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--linha);padding-bottom:16px;margin-bottom:14px}.side-menu-brand{display:flex;align-items:center;gap:8px}.side-menu-brand img{width:34px;height:34px;object-fit:contain}.side-menu-brand strong{font-size:25px;letter-spacing:.06em}.side-menu a{display:block;padding:13px 4px;border-bottom:1px solid var(--linha);font-family:"Montserrat",Arial,sans-serif;font-size:13px}.side-menu a:hover{color:var(--azul)}.menu-close{border:0;background:transparent;font-size:28px;color:var(--texto)}
+.hero{min-height:610px}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  section{padding:62px 0}
+  .brand small{display:none}
+}
+</style>
+<style>
+.custom-page{min-height:calc(100vh - 68px);padding:72px 0;background:var(--azul);color:#fff}
+.custom-page .custom-box{max-width:900px}
+.page-head{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.97);border-bottom:1px solid var(--linha)}
+.page-nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.page-brand{display:flex;align-items:center;gap:7px}
+.page-brand img{width:28px;height:28px;object-fit:contain}
+.page-brand strong{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.08em;font-weight:600}
+.back-link{font-family:"Montserrat",Arial,sans-serif;font-size:12px;color:var(--azul);border:1px solid var(--linha);padding:8px 13px;border-radius:10px;background:#fff}
+@media(max-width:700px){.custom-page{padding:42px 0}.custom-box{width:min(100%,92vw);box-sizing:border-box}.custom-box h2{font-size:31px;line-height:1.08}.custom-box p{font-size:15px;line-height:1.5;max-width:100%;padding:0 4px}.form-grid{width:100%;box-sizing:border-box}.field input,.field textarea,.field select{width:100%;box-sizing:border-box;font-size:14px;padding:11px 12px}.field span{font-family:"Montserrat",Arial,sans-serif;font-size:13px}.choice-grid{width:100%;box-sizing:border-box;gap:9px}.choice{min-width:0;box-sizing:border-box}.choice-name{font-size:11px}.section-label{font-size:15px;line-height:1.25}.summary{width:100%;box-sizing:border-box;overflow-wrap:anywhere}.summary-line{font-size:12px;line-height:1.35} }
+
+.choice{border-radius:12px;transition:border-color .18s,box-shadow .18s,transform .18s;overflow:hidden}.choice.selected{border:2px solid var(--azul);box-shadow:0 0 0 2px rgba(23,75,155,.10)}.choice:active{transform:scale(.99)}.choice img{height:105px}.choice-name{font-family:"Montserrat",Arial,sans-serif;color:var(--texto)}
+@media(max-width:560px){.container{width:min(100% - 28px,1080px)}.custom-box{width:100%;max-width:100%}.custom-page{padding-left:0;padding-right:0}.custom-box p{font-size:14px}.choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.choice{padding:6px}.choice img{height:92px}.choice-name{font-size:10px;line-height:1.2}.section-label{font-size:15px}.required-note{font-size:11px}.form-grid{gap:10px}.field input,.field textarea,.field select{font-size:13px}.summary{padding:14px}.summary h3{font-size:23px}.summary-line{font-size:12px;overflow-wrap:anywhere}}
+</style>
+</head>
+<body>
+<header class="page-head">
+  <div class="container page-nav">
+    <a class="page-brand" href="index.html" aria-label="Voltar para Mater Dei"><img src="imagens/logo-mater-dei.png" alt=""><strong>MATER DEI</strong></a>
+    <a class="back-link" href="index.html">Voltar à loja</a>
+  </div>
+</header>
+<main>
+<section class="custom custom-page" id="personalizados">
+  <div class="container custom-box">
+    <div class="eyebrow">Feito especialmente para você</div>
+    <h2>Monte seu terço personalizado</h2>
+    <p>Escolha cada detalhe do seu terço. Selecione as peças pelas imagens e, no final, confira o resumo do seu pedido.</p>
+    <form id="customForm" style="margin-top:28px;text-align:left">
+      <div class="form-grid">
+        <label class="field"><span>Seu nome</span><input id="customName" required placeholder="Seu nome"></label>
+        <label class="field"><span>Quantidade</span><input id="customQty" type="number" min="1" value="1" required></label>
+      </div>
+      <div class="section-label">1. Escolha as dezenas / contas</div>
+      <p class="required-note">Clique em uma opção para escolher. Ao escolher outra, a anterior é desmarcada.</p>
+      <div class="choice-grid" id="contasChoices"></div>
+      <div class="section-label">2. Escolha o entremeio</div>
+      <p class="required-note">A peça central entre as dezenas e o crucifixo.</p>
+      <div class="choice-grid"><label class="choice selected"><input type="radio" name="entremeio" value="Entremeio 01" checked><img src="imagens/entremeio-01.jpg" alt="Entremeio 01"><span class="choice-name">Entremeio 01</span></label></div>
+      <div class="section-label">3. Escolha os separadores</div><div class="choice-grid" id="separadoresChoices"></div>
+      <div class="section-label">4. Escolha o crucifixo</div><div class="choice-grid" id="crucifixosChoices"></div>
+      <div class="form-grid" style="margin-top:20px">
+        <label class="field full"><span>Cor principal</span><input id="customColor" placeholder="Ex.: azul, branco, marrom..."></label>
+        <label class="field full"><span>Outros detalhes</span><textarea id="customDescription" rows="5" placeholder="Descreva outros detalhes do seu pedido."></textarea></label>
+      </div>
+      <button class="btn light" style="width:100%;margin-top:15px" type="submit">Ver resumo do pedido</button>
+    </form>
+    <div class="summary" id="customSummary" style="display:none"></div>
+    <div id="customSendArea" style="display:none;margin-top:12px"><button class="btn whatsapp" style="width:100%" onclick="sendCustomOrder()">Enviar este pedido pelo WhatsApp</button></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <img class="footer-logo" src="imagens/logo-mater-dei.png" alt="Mater Dei">
+    <div class="footer-links"><a href="index.html">Loja</a><a href="index.html#tercos">Terços</a><a href="index.html#sobre">Sobre</a></div>
+    <div>© <span id="year"></span> Mater Dei. Todos os direitos reservados.</div>
+    <div style="margin-top:5px;">Omnia in Maria, per Mariam, cum Maria et ad Mariam · Ad Maiorem Dei Gloriam.</div>
+  </div>
+</footer>
+<script>
+const CONFIG={whatsapp:"5535999365361",nomeLoja:"Mater Dei"};
+let ultimoPersonalizado=null;
+function wa(texto){return "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(texto)}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+const contas=[['contas-01.jpg','Conta 01'],['contas-02.jpg','Conta 02'],['contas-03.jpg','Conta 03'],['contas-04.jpg','Conta 04'],['contas-05.jpg','Conta 05'],['contas-06.jpg','Conta 06']];
+const separadores=[["separador-a-01.jpg","Separador 01"],["separador-a-02.jpg","Separador 02"],["separador-a-03.jpg","Separador 03"],["separador-a-04.jpg","Separador 04"],["separador-b-01.jpg","Separador 05"],["separador-b-02.jpg","Separador 06"],["separador-b-03.jpg","Separador 07"],["separador-b-04.jpg","Separador 08"]];
+const crucifixos=[["crucifixo-01.jpg","Crucifixo 01"],["crucifixo-02.jpg","Crucifixo 02"],["crucifixo-03.jpg","Crucifixo 03"],["crucifixo-04.jpg","Crucifixo 04"]];
+function selecionado(nome){const el=document.querySelector(`input[name="${nome}"]:checked`);return el?el.value:"Não escolhido"}
+function renderEscolhas(){
+ document.getElementById("contasChoices").innerHTML=contas.map((x,i)=>`<label class="choice ${i===0?'selected':''}"><input type="radio" name="contas" value="${x[1]}" ${i===0?'checked':''}><img src="imagens/${x[0]}" alt="${x[1]}"><span class="choice-name">${x[1]}</span></label>`).join("");
+ document.getElementById("separadoresChoices").innerHTML=separadores.map((x,i)=>`<label class="choice ${i===0?'selected':''}"><input type="radio" name="separador" value="${x[1]}" ${i===0?'checked':''}><img src="imagens/${x[0]}" alt="${x[1]}"><span class="choice-name">${x[1]}</span></label>`).join("");
+ document.getElementById("crucifixosChoices").innerHTML=crucifixos.map((x,i)=>`<label class="choice ${i===0?'selected':''}"><input type="radio" name="crucifixo" value="${x[1]}" ${i===0?'checked':''}><img src="imagens/${x[0]}" alt="${x[1]}"><span class="choice-name">${x[1]}</span></label>`).join("");
+ document.querySelectorAll(".choice input").forEach(input=>input.addEventListener("change",()=>{document.querySelectorAll(`input[name="${input.name}"]`).forEach(i=>i.closest(".choice")?.classList.remove("selected"));input.closest(".choice")?.classList.add("selected")}));
+}
+document.getElementById("customForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const x={nome:document.getElementById("customName").value.trim(),qtd:document.getElementById("customQty").value,contas:selecionado("contas"),entremeio:selecionado("entremeio"),separador:selecionado("separador"),crucifixo:selecionado("crucifixo"),cor:document.getElementById("customColor").value.trim(),detalhes:document.getElementById("customDescription").value.trim()};
+ ultimoPersonalizado=x;
+ document.getElementById("customSummary").innerHTML=`<h3>Resumo do pedido</h3><div class="summary-line"><span class="summary-label">Nome</span><strong>${escapeHtml(x.nome)}</strong></div><div class="summary-line"><span class="summary-label">Quantidade</span>${escapeHtml(x.qtd)}</div><div class="summary-line"><span class="summary-label">Dezenas / contas</span>${escapeHtml(x.contas)}</div><div class="summary-line"><span class="summary-label">Entremeio</span>${escapeHtml(x.entremeio)}</div><div class="summary-line"><span class="summary-label">Separador</span>${escapeHtml(x.separador)}</div><div class="summary-line"><span class="summary-label">Crucifixo</span>${escapeHtml(x.crucifixo)}</div><div class="summary-line"><span class="summary-label">Cor</span>${escapeHtml(x.cor||"Não informada")}</div><div class="summary-line"><span class="summary-label">Outros detalhes</span>${escapeHtml(x.detalhes||"Não informado")}</div>`;
+ document.getElementById("customSummary").style.display="block";document.getElementById("customSendArea").style.display="block";
+ document.getElementById("customSummary").scrollIntoView({behavior:"smooth",block:"center"});
+});
+function sendCustomOrder(){
+ if(!ultimoPersonalizado)return; const x=ultimoPersonalizado;
+ const msg=`NOVO PEDIDO PERSONALIZADO — ${CONFIG.nomeLoja}\n\nCliente: ${x.nome}\nQuantidade: ${x.qtd}\nDezenas / contas: ${x.contas}\nEntremeio / medalha: ${x.entremeio}\nSeparador: ${x.separador}\nCrucifixo: ${x.crucifixo}\nCor principal: ${x.cor||"Não informada"}\nOutros detalhes: ${x.detalhes||"Não informado"}\n\nPedido realizado pelo site da Mater Dei.\nGostaria de confirmar disponibilidade e valor final.`;
+ window.open(wa(msg),"_blank");
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderEscolhas();
+</script>
+</body>
+</html>
